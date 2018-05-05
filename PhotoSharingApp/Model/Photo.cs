@@ -13,5 +13,6 @@ namespace PhotoSharingApp.Model
         private String Description { get; set; }
         private DateTime CreateDate { get; set; }
         private String Owner { get; set; }
+        public virtual Photo photo { get; set; }
     }
 }
