@@ -9,17 +9,17 @@ namespace PhotoSharingApp.Model
 {
     public class Photo
     {
-        private int PhotoID { get; set; }
-        private String Title { get; set; }
+        public int PhotoID { get; set; }
+        public String Title { get; set; }
         [DisplayName("Picture")]  
-        private byte[] PhotoFile { get; set; }
+        public byte[] PhotoFile { get; set; }
         [DataType(DataType.MultilineText)]
-        private String Description { get; set; }
+        public String Description { get; set; }
         [DisplayName("Created Date")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString ="{0:MM/dd/yy}",ApplyFormatInEditMode =true)]
-        private DateTime CreateDate { get; set; }
-        private String Owner { get; set; }
+        public DateTime CreateDate { get; set; }
+        public String Owner { get; set; }
         public virtual Photo photo { get; set; }
     }
 }
