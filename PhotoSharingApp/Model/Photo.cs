@@ -7,11 +7,11 @@ namespace PhotoSharingApp.Model
 {
     public class Photo
     {
-        private int PhotoID;
-        private String Title;
-        private List<Byte> PhotoFile;
-        private String Description;
-        private DateTime CreateDate;
-        private String Owner;
+        private int PhotoID { get; set; }
+        private String Title { get; set; }
+        private List<Byte> PhotoFile { get; set; }
+        private String Description { get; set; }
+        private DateTime CreateDate { get; set; }
+        private String Owner { get; set; }
     }
 }
