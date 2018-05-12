@@ -24,9 +24,9 @@ namespace PhotoSharingApp.Model
             photo.Title = "Test Photo";
             photo.Description = "test";
             photo.Owner = "NaokiSato";
-            photo.PhotoFile = System.IO.File.ReadAllBytes("./../Images/flower.jpg");
+          //  photo.PhotoFile = System.IO.File.ReadAllBytes("\\Images\\flower.jpg");
             photo.ImageMimeType = "image/jpeg";
-            photo.CreateDate = new DateTime();
+            photo.CreateDate =DateTime.Now;
             photos.Add(photo);
             foreach (var p in photos)
             {

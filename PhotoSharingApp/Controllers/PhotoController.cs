@@ -14,7 +14,7 @@ namespace PhotoSharingApp.Controller
         public ActionResult Index()
         {
             //var photo = new Photo();
-            return View(context.Photos.ToList());
+            return View(context.Photos.First<Photo>());
         }
     }
 }
