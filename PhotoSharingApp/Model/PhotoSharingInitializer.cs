@@ -9,6 +9,7 @@ namespace PhotoSharingApp.Model
 {
     public class PhotoSharingInitializer : DropCreateDatabaseAlways<PhotoSharingContext>
     {
+        //DropCreateDatabaseAlways<PhotoSharingContext>
         /*public byte[] getFileBytes(System.Drawing.Image imageIn)
         {
             using (var ms = new MemoryStream())
@@ -24,7 +25,7 @@ namespace PhotoSharingApp.Model
             photo.Title = "Test Photo";
             photo.Description = "test";
             photo.Owner = "NaokiSato";
-          //  photo.PhotoFile = System.IO.File.ReadAllBytes("\\Images\\flower.jpg");
+           photo.PhotoFile = System.IO.File.ReadAllBytes("\\Users\\LENOVO\\Desktop\\photoSharingProject\\photoSharingApplication\\PhotoSharingApp\\Images\\flower.jpg");
             photo.ImageMimeType = "image/jpeg";
             photo.CreateDate =DateTime.Now;
             photos.Add(photo);
@@ -33,6 +34,8 @@ namespace PhotoSharingApp.Model
                 context.Photos.Add(p);
             }
             context.SaveChanges();
+
+
             List<Comment> comments = new List<Comment>();
             Comment comment = new Comment();
             comment.PhotoID = 1;
