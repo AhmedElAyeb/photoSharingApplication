@@ -1,6 +1,7 @@
 ﻿using PhotoSharingApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,8 +15,9 @@ namespace PhotoSharingApp.Controller
         public ActionResult Index()
         {
             //var photo = new Photo();
-            return View(context.Photos.ToList());
+            return View(context.Photos.First<Photo>());
             //context.Photos.First<Photo>()
+            //context.Photos.ToList()
         }
 
         public ActionResult Display(int id)
@@ -53,6 +55,44 @@ namespace PhotoSharingApp.Controller
             else
             {
                 return View("Create", photo);
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            List<Photo> photos = context.Photos.ToList();
+            var verif = photos.Find(photo => photo.PhotoID == id);
+            if (verif==null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View("Delete", verif);
+            }
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed (int id)
+        {
+            List<Photo> photos = context.Photos.ToList();
+            var verif = photos.Find(photo => photo.PhotoID == id);
+            context.Entry(verif).State = EntityState.Deleted;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public FileContentResult GetImage (int id)
+        {
+            List<Photo> photos = context.Photos.ToList();
+            var verif = photos.Find(photo => photo.PhotoID == id);
+            if(verif!=null)
+            {
+               
+                return (new FileContentResult(verif.PhotoFile,verif.ImageMimeType));
+            }
+            else
+            {
+                return null;
             }
         }
     }
