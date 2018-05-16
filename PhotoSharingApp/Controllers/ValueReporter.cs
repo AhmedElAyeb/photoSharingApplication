@@ -18,5 +18,10 @@ namespace PhotoSharingApp.Controllers
                 Debug.WriteLine("Key : "+value.Key+" / Value :"+value.Value);
             }
         }
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            logValues(filterContext.RouteData);
+           
+        }
     }
 }
