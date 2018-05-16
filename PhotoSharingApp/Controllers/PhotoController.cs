@@ -97,6 +97,22 @@ namespace PhotoSharingApp.Controller
                 return null;
             }
         }
+        [ChildActionOnly]
+        public ActionResult _PhotoGallery(int number = 0)
+        {
+        List<Photo> photos = new List<Photo>();
+            if(number==0)
+            {
+                photos = context.Photos.ToList();
+            }
+            else
+            {
+                photos = (from p in context.Photos
+                          orderby p.CreateDate descending
+                          select p).Take(number).ToList();
+            }
+            return PartialView("_PhotoGallery",photos);
+        }
     }
     
 }
