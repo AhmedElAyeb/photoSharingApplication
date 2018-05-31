@@ -42,3 +42,5 @@ C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharing
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.xml
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.csprojResolveAssemblyReference.cache
+C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.dll
+C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\MvcSiteMapProvider.xml
