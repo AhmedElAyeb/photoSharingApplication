@@ -13,7 +13,6 @@ C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharing
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingTests.dll.config
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingTests.dll
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingTests.pdb
-C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\PhotoSharingApp.dll
 C:\Users\LENOVO\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingTests\bin\Debug\System.Web.Helpers.dll

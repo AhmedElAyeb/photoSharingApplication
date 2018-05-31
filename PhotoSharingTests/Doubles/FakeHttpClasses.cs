@@ -8,12 +8,12 @@ using System.Web;
 
 namespace PhotoSharingTests.Doubles
 {
-    class FakeHttpClasses : HttpContextBase
+    class FakeHttpContextForRouting : HttpContextBase
     {
         FakeHttpRequestForRouting _request;
         FakeHttpResponseForRouting _response;
 
-        public void FakeHttpContextForRouting (string appPath = "/", string requestUrl = "~/")
+        public FakeHttpContextForRouting (string appPath = "/", string requestUrl = "~/")
         {
             _request = new FakeHttpRequestForRouting(appPath, requestUrl);
             _response = new FakeHttpResponseForRouting();
@@ -40,6 +40,7 @@ namespace PhotoSharingTests.Doubles
             _appPath = appPath;
             _requestUrl = requestUrl;
         }
+
 
         public override string ApplicationPath
         {
