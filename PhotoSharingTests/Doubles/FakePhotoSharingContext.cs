@@ -49,6 +49,15 @@ namespace PhotoSharingTests.Doubles
             return item;
         }
 
+        public Photo FindPhotoByTitle(String title)
+        {
+            Photo item = (from p in this.Photos
+                          where p.Title == title
+                          select p).First();
+
+            return item;
+        }
+
         public Comment FindCommentById(int ID)
         {
             Comment item = (from c in this.Comments
