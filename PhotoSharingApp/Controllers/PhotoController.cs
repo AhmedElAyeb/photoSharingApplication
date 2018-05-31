@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace PhotoSharingApp.Controller
-{      
+{
+    [HandleError(View = "Error")]
     [ValueReporter]
     public class PhotoController : System.Web.Mvc.Controller
     {
@@ -105,6 +106,11 @@ namespace PhotoSharingApp.Controller
             {
                 return null;
             }
+        }
+
+        public ActionResult SlideShow()
+        {
+            throw new NotImplementedException("The SlideShow action is not yet ready");
         }
         [ChildActionOnly]
         public ActionResult _PhotoGallery(int number = 0)
