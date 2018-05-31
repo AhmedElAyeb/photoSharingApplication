@@ -190,3 +190,15 @@
 #slide-show DIV.last-active-card {
     z-index: 9;
 }
+@media only screen and (max-width: 500px) {
+.topmenulink {
+float: left;
+background-color: #cccccc;
+width: 100px;
+height: 35px;
+text-align: center;
+line-height: 2em;
+border-radius: 5px;
+margin: 5px;
+}
+}
