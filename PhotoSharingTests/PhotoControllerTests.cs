@@ -5,6 +5,8 @@ using System.Web.Mvc;
 using PhotoSharingApp.Model;
 using PhotoSharingApp.Controllers;
 using PhotoSharingApp.Controller;
+using System.Linq;
+using PhotoSharingTests.Doubles;
 
 namespace PhotoSharingTests
 {
@@ -14,8 +16,9 @@ namespace PhotoSharingTests
         [TestMethod]
         public void Test_Index_Return_View()
         {
-            
-            PhotoController controller = new PhotoController();
+
+            var context = new FakePhotoSharingContext();
+            var controller = new PhotoController(context);
             var result = controller.Index() as ViewResult;
             Assert.AreEqual("Index",
             result.ViewName);
@@ -23,14 +26,29 @@ namespace PhotoSharingTests
         [TestMethod]
         public void Test_PhotoGallery_Model_Type()
         {
-            var controller = new PhotoController();
+
+            var context = new FakePhotoSharingContext();
+            context.Photos = new[] {
+new Photo(),
+new Photo(),
+new Photo(),
+new Photo()
+}.AsQueryable();
+            var controller = new PhotoController(context);
             var result = controller._PhotoGallery() as PartialViewResult;
             Assert.AreEqual(typeof(List<Photo>), result.Model.GetType());
         }
         [TestMethod]
         public void Test_GetImage_Return_Type()
         {
-            var controller = new PhotoController();
+            var context = new FakePhotoSharingContext();
+            context.Photos = new[] {
+new Photo{ PhotoID = 1, PhotoFile = new byte[1], ImageMimeType = "image/jpeg" },
+new Photo{ PhotoID = 2, PhotoFile = new byte[1], ImageMimeType = "image/jpeg" },
+new Photo{ PhotoID = 3, PhotoFile = new byte[1], ImageMimeType = "image/jpeg" },
+new Photo{ PhotoID = 4, PhotoFile = new byte[1], ImageMimeType = "image/jpeg" }
+}.AsQueryable();
+            var controller = new PhotoController(context);
             var result = controller.GetImage(1) as ActionResult;
             Assert.AreEqual(typeof(FileContentResult), result.GetType());
         }
