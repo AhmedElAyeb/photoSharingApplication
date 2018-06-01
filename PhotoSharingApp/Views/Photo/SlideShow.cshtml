@@ -20,7 +20,7 @@
                 @Html.ActionLink(item.Title, "Details", new { id = item.PhotoID })
             </h3>
             <p>
-                By @Html.DisplayFor(modelItem => item.UserName)
+                By @Html.DisplayFor(modelItem => item.Owner)
             </p>
             @if (item.PhotoFile != null)
             {
