@@ -106,6 +106,7 @@ namespace PhotoSharingApp.Controller
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage (int id)
         {
             Photo verif = context.FindPhotoById(id);
