@@ -22,6 +22,16 @@ namespace PhotoSharingApp.Controllers
             context = Context;
         }
 
+        [ChildActionOnly]
+        public PartialViewResult _CommentsForPhoto(int PhotoId)
+        {
+            var comments = from c in context.Comments
+                           where c.PhotoID == PhotoId
+                           select c;
+            ViewBag.PhotoId = PhotoId;
+            return PartialView("_CommentsForPhoto", comments.ToList());
+        }
+
         //
         // GET: /Comment/Delete/5
         public ActionResult Delete(int id = 0)
