@@ -62,9 +62,10 @@
             </dd>
     
         </dl>
+    @Html.Action("_CommentsForPhoto", "Comment", new { PhotoId = Model.PhotoID })
+<p>
     
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.PhotoID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    @Html.ActionLink("Back To List", "Index")
+    @Html.ActionLink("Delete This Photo", "Delete", new { id = Model.PhotoID })
+</p>
 

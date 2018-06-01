@@ -55,5 +55,13 @@ namespace PhotoSharingApp.Controllers
             context.SaveChanges();
             return RedirectToAction("Display", "Photo", new { id = comment.PhotoID });
         }
+
+        public PartialViewResult _Create(int PhotoId)
+        {
+            Comment newComment = new Comment();
+            newComment.PhotoID = PhotoId;
+            ViewBag.PhotoID = PhotoId;
+            return PartialView("_CreateAComment");
+        }
     }
 }
