@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace PhotoSharingApp.Controller
 {
@@ -27,12 +28,12 @@ namespace PhotoSharingApp.Controller
         }
 
         // GET: Photo
+        [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "none")]
         public ActionResult Index()
         {
-            //var photo = new Photo(); 
+           
             return View("Index");
-            //context.Photos.First<Photo>()
-            //context.Photos.ToList()
+        
         }
 
         public ActionResult Display(int id)
