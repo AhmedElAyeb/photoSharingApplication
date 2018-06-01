@@ -63,5 +63,16 @@ namespace PhotoSharingApp.Controllers
             ViewBag.PhotoID = PhotoId;
             return PartialView("_CreateAComment");
         }
+        [HttpPost]
+        public PartialViewResult _CommentsForPhoto(Comment comment, int PhotoId)
+        {
+            context.Add<Comment>(comment);
+            context.SaveChanges();
+            var comments = from c in context.Comments
+                           where c.PhotoID == PhotoId
+                           select c;
+            ViewBag.PhotoId = PhotoId;
+            return PartialView("_CommentsForPhoto", comments.ToList());
+        }
     }
 }
