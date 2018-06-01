@@ -123,7 +123,7 @@ namespace PhotoSharingApp.Controller
 
         public ActionResult SlideShow()
         {
-            throw new NotImplementedException("The SlideShow action is not yet ready");
+            return View("SlideShow", context.Photos.ToList());
         }
         [ChildActionOnly]
         public ActionResult _PhotoGallery(int number = 0)
