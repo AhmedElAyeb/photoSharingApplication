@@ -2,6 +2,11 @@
 
 
 <h3>Comments</h3>
+
+@using (Ajax.BeginForm("_CommentsForPhoto",
+            new { PhotoId = ViewBag.PhotoId },
+            new AjaxOptions { UpdateTargetId = "comments-tool" }))
+{
 <div id="comments-tool">
     <div id="all-comments">
         @foreach (var item in Model)
@@ -22,4 +27,8 @@
             </div>
         }
     </div>
+    <div id="add-comment" class="add-comment-box">
+        @Html.Action("_Create", "Comment", new { PhotoId = ViewBag.PhotoId })
+    </div>
 </div>
+}
