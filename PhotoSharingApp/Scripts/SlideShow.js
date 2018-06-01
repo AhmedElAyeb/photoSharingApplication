@@ -1,6 +1,13 @@
 ﻿var percentIncrement;
 var percentCurrent = 100;
 function slideSwitch() {
+    percentCurrent += percentIncrement;
+    if (percentCurrent > 100) {
+        percentCurrent = percentIncrement;
+    }
+    $('#slideshow-progress-bar').progressbar({
+        value: percentCurrent
+    });
     var $activeCard = $('#slide-show DIV.active-card');
     if ($activeCard.length == 0) {
         $activeCard = $('#slide-show DIV.slide-show-card:last');
@@ -16,6 +23,16 @@ function slideSwitch() {
         $activeCard.removeClass('active-card last-active-card');
     });
 }
+
+function calculateIncrement() {
+    var cardCount = $('#slide-show DIV.slide-show-card').length;
+    percentIncrement = 100 / cardCount;
+    $('#slideshow-progress-bar').progressbar({
+        value: 100
+    });
+}
+
 $(document).ready(function () {
+    calculateIncrement();
     setInterval("slideSwitch()", 5000);
 });
